@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+     <script type = "text/JavaScript">
+         <!--
+            function AutoRefresh( t ) {
+               setTimeout("location.reload(true);", t);
+            }
+         //-->
+      </script>
     <title>RailsMisterCocktail</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +17,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body onload = "JavaScript:AutoRefresh(7000);">
     <%= yield %>
   </body>
+
+
 </html>
+
