@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Select Your Ingredient and Dose for <%= @cocktail.name %></h1>
+
+  <!-- give simple form the model we are talking abotu so simple form can say ;this model has these columsn' meaning it can correctly send data to back in via params.
+  it will also know the does model (connected to dose table) which has an ingredient id with it = association. -->
+  <%= simple_form_for([@cocktail, @dose]) do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.submit %>
+    <%= link_to 'Homepage', cocktails_path  %>
+  <% end %>
+
+</div>
