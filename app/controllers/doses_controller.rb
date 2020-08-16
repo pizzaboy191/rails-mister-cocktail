@@ -3,7 +3,6 @@ class DosesController < ApplicationController
     @dose = Dose.new
     # This has to be definied because we need to know about the cocktail and empty dose. This cocktail is then utilised in the form.
     @cocktail = Cocktail.find(params[:cocktail_id])
-
   end
 
   def create

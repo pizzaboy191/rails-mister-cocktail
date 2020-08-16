@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-     <script type = "text/JavaScript">
-         <!--
-            function AutoRefresh( t ) {
-               setTimeout("location.reload(true);", t);
-            }
-         //-->
-      </script>
     <title>RailsMisterCocktail</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css" integrity="sha256-t2ATOGCtAIZNnzER679jwcFcKYfLlw01gli6F6oszk8=" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body onload = "JavaScript:AutoRefresh(7000);">
+  <body>
+    <nav class="navbar navbar-light bg-dark justify-content-between">
+      <%= link_to 'Home', cocktails_path, class: "pink" %>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" id ="search-input" type="search" placeholder="Mojito, Whiskey..." aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+    <main>
+      <div id="hits"></div>
+      <div id="pagination"></div>
+    </main>
     <%= yield %>
   </body>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.0.0/dist/algoliasearch-lite.umd.js" integrity="sha256-MfeKq2Aw9VAkaE9Caes2NOxQf6vUa8Av0JqcUXUGkd0=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.0.0/dist/instantsearch.production.min.js" integrity="sha256-6S7q0JJs/Kx4kb/fv0oMjS855QTz5Rc2hh9AkIUjUsk=" crossorigin="anonymous"></script>
 
 
 </html>

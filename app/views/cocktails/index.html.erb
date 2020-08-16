@@ -20,7 +20,7 @@
   </div>
 </div>
 
- <div class="container my-3">
+ <div class="cards">
   <% @cocktails.each do |cocktail| %>
    <div class="card-trip m-2">
        <% if cocktail.photo.attached? %>
@@ -29,10 +29,11 @@
 
      <div class="card-trip-infos">
        <div>
-         <h2><%= link_to "#{cocktail.name}", cocktail_path(cocktail)  %></h2>
-         <p>Cocktails description here!</p>
-         <p><%= link_to 'Delete', cocktail_path(cocktail), method: :delete,
-                                                     data: { confirm: "Are you sure?" } %></p>
+         <h2><%= link_to "#{cocktail.name}", cocktail_path(cocktail), class: "pink"  %></h2>
+         <p><%= "#{cocktail.description}" %></p>
+
+         <!-- <p><%= link_to 'Delete', cocktail_path(cocktail), method: :delete,
+                                                     data: { confirm: "Are you sure?" } %></p> -->
        </div>
        <h2 class="card-trip-pricing">🍸</h2>
      </div>

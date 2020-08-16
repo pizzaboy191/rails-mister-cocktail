@@ -3,8 +3,11 @@
 @import "avatar";
 @import "navbar";
 @import "card";
-// @import "card-layout";
+@import "card-layout";
 // @import "card-product";
 @import "banner";
+@import "card-category";
 
-
+body {
+  background-color: grey;
+}
